@@ -13,3 +13,10 @@
     max-width: 128px;
     height: 64px;
 }
+.Button:hover{
+    box-shadow: 15px 15px 20px grey;
+}
+.clicked{
+    box-shadow: 5px 5px 20px rgb(192, 192, 192) !important;
+    border:1px solid grey;
+}
