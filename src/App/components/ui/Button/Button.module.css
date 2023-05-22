@@ -7,6 +7,8 @@
     border-radius: 7px;
     border: none;
     box-shadow: 25px 25px 20px grey;
+    margin-left:15px;
+    margin-bottom:15px;
 }
 .Button>img{
     width: auto;
