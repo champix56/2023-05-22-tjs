@@ -11,7 +11,10 @@ const Button = (props) => {
 Button.propTypes={
     children: PropTypes.any.isRequired,
     onButtonClick: PropTypes.func.isRequired,
-    bgColor: PropTypes.string,
+    bgColor: PropTypes.string.isRequired,
     style: PropTypes.object
+}
+Button.defaultProps={
+    bgColor:'lime'
 }
 export default Button; 
