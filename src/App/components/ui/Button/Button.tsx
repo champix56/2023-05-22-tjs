@@ -11,7 +11,7 @@ interface I_ButtonProps{
 
 const Button:React.FC<I_ButtonProps> = (props) => {
     return <button type={props.type} onClick={(evt) => {
-        props.onButtonClick('hello');
+        props.onButtonClick();
     }} className={styles.Button}
         style={{ ...props.style,backgroundColor: props.bgColor }}
     >{props.children}</button>
