@@ -6,7 +6,7 @@ interface I_ButtonProps{
     style?:object
     bgColor?:string
     children:string|React.ReactNode|Array<React.ReactNode|string>
-    type:'button'|'reset'|'submit'
+    type?:'button'|'reset'|'submit'
 }
 
 const Button:React.FC<I_ButtonProps> = (props) => {
@@ -20,9 +20,11 @@ Button.propTypes={
     children: PropTypes.any.isRequired,
     onButtonClick: PropTypes.func.isRequired,
     bgColor: PropTypes.string.isRequired,
-    style: PropTypes.object
+    style: PropTypes.object,
+    type: PropTypes.oneOf(['button','reset','submit'])
 }
 Button.defaultProps={
-    bgColor:'lime'
+    bgColor:'lime',
+    type:'button'
 }
 export default Button; 
