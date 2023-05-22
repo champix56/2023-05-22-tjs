@@ -1,0 +1,15 @@
+.Button{
+    background-color: skyblue;
+    color: white;
+    font-weight: 900;
+    font-size: xx-large;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 25px 25px 20px grey;
+}
+.Button>img{
+    width: auto;
+    max-width: 128px;
+    height: 64px;
+}
