@@ -29,7 +29,7 @@ function App(props) {
        setcounter(counter+1);
        console.log(counter);
       }} >+1</Button2>
-
+     
     </div>
   );
 }
