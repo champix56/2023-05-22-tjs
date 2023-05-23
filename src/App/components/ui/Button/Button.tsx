@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import styles from './Button.module.css'
 import PropTypes from 'prop-types'
-import TemplateName from '../../TemplateName/TemplateName.lazy'
 interface I_ButtonProps{
     onButtonClick: Function
     style?:object
@@ -22,7 +21,7 @@ const Button:React.FC<I_ButtonProps> = (props) => {
         props.onButtonClick();
     }} className={!isClicked?styles.Button:styles.Button+' '+styles.clicked}
         style={{ ...props.style,backgroundColor: props.bgColor }}
-    >{props.children} <TemplateName/></button>
+    >{props.children}</button>
 }
 Button.propTypes={
     children: PropTypes.any.isRequired,
