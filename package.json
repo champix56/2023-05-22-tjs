@@ -23,7 +23,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cmpLayout":"npx generate-react-cli c --type=layout",
+    "cmpFunc":"npx generate-react-cli c --type=functionnal",
+    "cmpUI":"npx generate-react-cli c --type=ui"
   },
   "eslintConfig": {
     "extends": [

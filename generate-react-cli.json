@@ -11,6 +11,37 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "ui": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc_template/functionHooked/TemplateName.jsx"
+      }
+    },
+    "functionnal": {
+      "path": "src/App/components/functionnal",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc_template/functionHooked/TemplateName.jsx"
+      }
+    },
+    "layout": {
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc_template/functionLayout/TemplateName.jsx",
+        "style":"grc_template/functionLayout/TemplateName.module.css"
+      }
     }
   }
 }
