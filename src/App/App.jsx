@@ -1,36 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Button from './components/ui/Button/Button';
-import Button2 from './components/ui/Button/ButtonClass';
-
+import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
+import Header from './components/ui/Header/Header';
+import Navbar from './components/ui/Navbar/Navbar';
+import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
+import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
+import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import Footer from './components/ui/Footer/Footer';
 function App(props) {
-  const [counter, setcounter] = useState(0)
-  useEffect(() => {
-    console.log('montage du cmp');
-    return ()=>{
-      console.log('demontage du cmp');
-    }
-  }, [])
-  useEffect(() => {
-    console.log('valeur etatique',counter);
-    return()=>{
-     console.log('demontage du cmp lié a la valeur de counter')
-    }
-  }, [counter])
   return (
-    <div className="App">
-      valeur de counter :{counter}
-      <hr />
-      <Button bgColor='tomato' onButtonClick={() => {
-       setcounter(counter-1);
-       console.log(counter);
-      }} >-1</Button>
-      <Button2 bgColor='skyblue' onButtonClick={() => {
-       setcounter(counter+1);
-       console.log(counter);
-      }} >+1</Button2>
-     
-    </div>
+    <FlexH3Grow>
+      <Header />
+      <Navbar />
+      <FlexW1Grow>
+        <MemeSVGViewer meme={emptyMeme} image={undefined} />
+        <MemeForm />
+      </FlexW1Grow>
+      <Footer />
+    </FlexH3Grow>
   );
 }
 
