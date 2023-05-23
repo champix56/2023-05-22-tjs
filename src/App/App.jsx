@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
 import Header from './components/ui/Header/Header';
@@ -8,13 +8,16 @@ import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
 function App(props) {
+  const [meme, setmeme] = useState(emptyMeme)
   return (
     <FlexH3Grow>
       <Header />
       <Navbar />
       <FlexW1Grow>
-        <MemeSVGViewer meme={emptyMeme} image={undefined} />
-        <MemeForm />
+        <MemeSVGViewer meme={meme} image={undefined} />
+        <MemeForm meme={meme} onMemeChange={(meme)=>{
+          setmeme(meme);
+        }}/>
       </FlexW1Grow>
       <Footer />
     </FlexH3Grow>
