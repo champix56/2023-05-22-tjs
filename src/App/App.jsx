@@ -8,13 +8,14 @@ import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
 function App(props) {
-  const [meme, setmeme] = useState(emptyMeme)
+  const [meme, setmeme] = useState(emptyMeme);
+
   return (
     <FlexH3Grow>
       <Header />
       <Navbar />
       <FlexW1Grow>
-        <MemeSVGViewer meme={meme} image={undefined} />
+        <MemeSVGViewer meme={meme} image={undefined} basePath='' />
         <MemeForm meme={meme} onMemeChange={(meme)=>{
           setmeme(meme);
         }}/>
