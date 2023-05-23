@@ -67,9 +67,9 @@ const MemeForm = (props) => {
         }} />
         <br />
         <input name="underline" id="underline" type="checkbox" checked={props.meme.underline}  onChange={evt=>{
-          props.onMemeChange({...props.meme,underline:evt.target.value})
+          props.onMemeChange({...props.meme,underline:evt.target.checked})
         }}  />&nbsp;<label htmlFor="underline"><h2 style={{ display: 'inline' }}>underline</h2></label>&nbsp;<h2 style={{ display: 'inline' }}>/</h2>&nbsp;<label htmlFor="italic"><h2 style={{ display: 'inline' }}>italic</h2></label>&nbsp;<input name="italic" id="italic" type="checkbox" checked={props.meme.italic} onChange={evt=>{
-          props.onMemeChange({...props.meme,italic:evt.target.value})
+          props.onMemeChange({...props.meme,italic:evt.target.checked})
         }} />
         <hr />
         <Button bgColor='tomato' type="reset">Annul.</Button>
