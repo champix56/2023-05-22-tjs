@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow';
 import Header from './components/ui/Header/Header';
@@ -9,7 +9,12 @@ import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
-  const [imgs, setimgs] = useState([])
+  const [imgs, setimgs] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5679/images`)
+      .then(r=>r.json())
+      .then(arr=>setimgs(arr));
+  }, [])
   return (
     <FlexH3Grow>
       <Header />
