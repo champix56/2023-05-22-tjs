@@ -1,5 +1,9 @@
 .FlexH3Grow{
     display:flex;
-    height: 100%;
+    height: 92vh;
     width: 100%;
+    flex-direction: column;
+}
+.FlexH3Grow>*:nth-child(3){
+    flex-grow: 1;
 }
