@@ -23,6 +23,9 @@ const MemeForm = (props) => {
         <br />
         <select name="image" id="image">
           <option value="-1">No image</option>
+          {
+            props.images.map((img,i)=><option key={`select-img-${i}`} value={img.id}>{img.titre}</option>)
+          }
         </select>
         <hr />
         <label htmlFor="text"><h2>texte</h2></label>
