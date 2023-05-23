@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import styles from './Button.module.css'
 import PropTypes from 'prop-types'
 interface I_ButtonProps{
@@ -10,9 +10,16 @@ interface I_ButtonProps{
 }
 
 const Button:React.FC<I_ButtonProps> = (props) => {
+    const [isClicked, setisClicked] = useState(false)
+    useEffect(() => {
+       if(isClicked){
+        setTimeout(()=>{setisClicked(false)},1000)
+       }
+    }, [isClicked])
     return <button type={props.type} onClick={(evt) => {
+        setisClicked(true);
         props.onButtonClick();
-    }} className={styles.Button}
+    }} className={!isClicked?styles.Button:styles.Button+' '+styles.clicked}
         style={{ ...props.style,backgroundColor: props.bgColor }}
     >{props.children}</button>
 }
