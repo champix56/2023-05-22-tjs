@@ -7,6 +7,7 @@ import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
 import { MemeSVGThumbnail, MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
+import { Route, Routes } from 'react-router-dom';
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
   const [imgs, setimgs] = useState([]);
@@ -20,7 +21,7 @@ function App(props) {
 
     Promise.all([prImg, prMeme])
       .then(arr => {
-        setmemes(arr[1]); 
+        setmemes(arr[1]);
         setimgs(arr[0])
       });
   }, [])
@@ -28,13 +29,18 @@ function App(props) {
     <FlexH3Grow>
       <Header />
       <Navbar />
-      <MemeSVGThumbnail memes={memes} images={imgs} basePath='' />
-      {/* <FlexW1Grow>
-        <MemeSVGViewer meme={meme} image={imgs.find((img) => img.id === meme.imageId)} basePath='' />
-        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
-          setmeme(meme);
-        }} />
-      </FlexW1Grow> */}
+      <FlexW1Grow>
+        <Routes>
+          <Route path='/thumbnail' element={<MemeSVGThumbnail memes={memes} images={imgs} basePath='' />} />
+          <Route path='/meme' element={<>
+            <MemeSVGViewer meme={meme} image={imgs.find((img) => img.id === meme.imageId)} basePath='' />
+            <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
+              setmeme(meme);
+            }} />
+          </>} />
+        </Routes>
+
+      </FlexW1Grow>
       <Footer />
     </FlexH3Grow>
   );
