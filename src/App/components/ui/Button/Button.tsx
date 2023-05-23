@@ -25,7 +25,7 @@ const Button:React.FC<I_ButtonProps> = (props) => {
 }
 Button.propTypes={
     children: PropTypes.any.isRequired,
-    onButtonClick: PropTypes.func.isRequired,
+    onButtonClick: PropTypes.func,
     bgColor: PropTypes.string.isRequired,
     style: PropTypes.object,
     type: PropTypes.oneOf(['button','reset','submit'])
