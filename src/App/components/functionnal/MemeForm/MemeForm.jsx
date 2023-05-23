@@ -17,7 +17,9 @@ const MemeForm = (props) => {
       <form>
         <label htmlFor="titre"><h1>Titre</h1></label>
         <br />
-        <input name="titre" id="titre" value={props.meme.titre} />
+        <input name="titre" id="titre" value={props.meme.titre}   onChange={evt => {
+          props.onMemeChange({ ...props.meme, titre:evt.target.value })
+        }} />
         <hr />
         <label htmlFor="image"><h2>Image</h2></label>
         <br />
@@ -44,19 +46,31 @@ const MemeForm = (props) => {
           props.onMemeChange({ ...props.meme, x:Number(evt.target.value) })
         }} />
         <label htmlFor="y"><h2 style={{ display: 'inline' }}>y :</h2></label>
-        <input className={styles.smallNumber} name="y" id="y" type="number" value={props.meme.y} />
+        <input className={styles.smallNumber} name="y" id="y" type="number" value={props.meme.y}   onChange={evt => {
+          props.onMemeChange({ ...props.meme, y:Number(evt.target.value) })
+        }} />
         <hr />
         <h2>Decorations</h2>
         <label htmlFor="color"><h2 style={{ display: 'inline' }}>color :</h2></label>
-        <input name="color" id="color" type="color" value={props.meme.color} />
+        <input name="color" id="color" type="color" value={props.meme.color}   onChange={evt => {
+          props.onMemeChange({ ...props.meme, color:evt.target.value })
+        }} />
         <br />
         <label htmlFor="fontSize"><h2 style={{ display: 'inline' }}>font-size :</h2></label>
-        <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" min="0" value={props.meme.fontSize} />px
+        <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" min="0" value={props.meme.fontSize}   onChange={evt => {
+          props.onMemeChange({ ...props.meme, fontSize:Number(evt.target.value) })
+        }} />px
         <br />
         <label htmlFor="fontWeight"><h2 style={{ display: 'inline' }}>font-weight :</h2></label>
-        <input className={styles.smallNumber} name="fontWeight" id="fontWeight" type="number" min="100" step="100" max="900" value={props.meme.fontWeight} />
+        <input className={styles.smallNumber} name="fontWeight" id="fontWeight" type="number" min="100" step="100" max="900" value={props.meme.fontWeight}   onChange={evt => {
+          props.onMemeChange({ ...props.meme, fontWeight:evt.target.value })
+        }} />
         <br />
-        <input name="underline" id="underline" type="checkbox" checked={props.meme.underline} />&nbsp;<label htmlFor="underline"><h2 style={{ display: 'inline' }}>underline</h2></label>&nbsp;<h2 style={{ display: 'inline' }}>/</h2>&nbsp;<label htmlFor="italic"><h2 style={{ display: 'inline' }}>italic</h2></label>&nbsp;<input name="italic" id="italic" type="checkbox" checked={props.meme.italic} />
+        <input name="underline" id="underline" type="checkbox" checked={props.meme.underline}  onChange={evt=>{
+          props.onMemeChange({...props.meme,underline:evt.target.value})
+        }}  />&nbsp;<label htmlFor="underline"><h2 style={{ display: 'inline' }}>underline</h2></label>&nbsp;<h2 style={{ display: 'inline' }}>/</h2>&nbsp;<label htmlFor="italic"><h2 style={{ display: 'inline' }}>italic</h2></label>&nbsp;<input name="italic" id="italic" type="checkbox" checked={props.meme.italic} onChange={evt=>{
+          props.onMemeChange({...props.meme,italic:evt.target.value})
+        }} />
         <hr />
         <Button bgColor='tomato' type="reset">Annul.</Button>
         <Button bgColor='skyblue' type="submit">OK</Button>
