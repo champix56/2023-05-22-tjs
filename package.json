@@ -28,7 +28,8 @@
     "build-storybook": "storybook build",
     "cmpLayout": "npx generate-react-cli c --type=layout",
     "cmpFunc": "npx generate-react-cli c --type=functionnal",
-    "cmpUI": "npx generate-react-cli c --type=ui"
+    "cmpUI": "npx generate-react-cli c --type=ui",
+    "rest":"npx json-server -p 5679 db/db.json"
   },
   "eslintConfig": {
     "extends": [

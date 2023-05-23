@@ -1,0 +1,83 @@
+{
+  "images": [
+    {
+      "id": 0,
+      "titre": "react'n roll",
+      "url": "https://t4.ftcdn.net/jpg/02/24/11/57/240_F_224115780_2ssvcCoTfQrx68Qsl5NxtVIDFWKtAgq2.jpg",
+      "w": 543,
+      "h": 240
+    },
+    {
+      "id": 1,
+      "titre": "deformed",
+      "url": "https://wallpapers.com/images/featured/r8l2gifvpdd0kt25.jpg",
+      "w": 1125,
+      "h": 900
+    },
+    {
+      "id": 2,
+      "titre": "Not work",
+      "url": "https://t3.ftcdn.net/jpg/00/08/59/86/240_F_8598647_6ULL8YFqpJoX6XCuFCVKsWRf1QP1CeK8.jpg",
+      "w": 336,
+      "h": 240
+    },
+    {
+      "id": 3,
+      "titre": "Wait long time",
+      "url": "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3756616.jpg&fm=jpg",
+      "w": 4067,
+      "h": 6100
+    },
+    {
+      "id": 4,
+      "titre": "old dog",
+      "url": "https://i.insider.com/5e74de0b235c1801f042b048?width=750&format=jpeg&auto=webp",
+      "w": 750,
+      "h": 562
+    }
+  ],
+  "memes": [
+    {
+      "id": 0,
+      "titre": "React n'roll",
+      "text": "React n'roll",
+      "x": 100,
+      "y": 20,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 0,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0
+    },
+    {
+      "id": 1,
+      "titre": "Long wait",
+      "text": "Long wait",
+      "x": 100,
+      "y": 20,
+      "fontWeight": "900",
+      "fontSize": 100,
+      "underline": true,
+      "italic": false,
+      "imageId": 3,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0
+    },
+    {
+      "helo": "delu",
+      "id": 2
+    },
+    {
+      "helo": "delu",
+      "id": 3
+    },
+    {
+      "helo": "delu",
+      "id": 4
+    }
+  ]
+}
