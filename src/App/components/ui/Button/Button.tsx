@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import styles from './Button.module.css'
 import PropTypes from 'prop-types'
 interface I_ButtonProps{
-    onButtonClick: Function
+    onButtonClick?: Function
     style?:object
     bgColor?:string
     children:string|React.ReactNode|Array<React.ReactNode|string>
@@ -18,7 +18,7 @@ const Button:React.FC<I_ButtonProps> = (props) => {
     }, [isClicked])
     return <button type={props.type} onClick={(evt) => {
         setisClicked(true);
-        props.onButtonClick();
+        if(undefined!==props.onButtonClick){props.onButtonClick()};
     }} className={!isClicked?styles.Button:styles.Button+' '+styles.clicked}
         style={{ ...props.style,backgroundColor: props.bgColor }}
     >{props.children}</button>
@@ -32,6 +32,6 @@ Button.propTypes={
 }
 Button.defaultProps={
     bgColor:'lime',
-    type:'button'
+    type:'button',
 }
 export default Button; 
