@@ -9,16 +9,16 @@ import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
-
+  const [imgs, setimgs] = useState([])
   return (
     <FlexH3Grow>
       <Header />
       <Navbar />
       <FlexW1Grow>
-        <MemeSVGViewer meme={meme} image={undefined} basePath='' />
-        <MemeForm meme={meme} onMemeChange={(meme)=>{
+        <MemeSVGViewer meme={meme} image={imgs.find((img) => img.id === meme.imageId)} basePath='' />
+        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
           setmeme(meme);
-        }}/>
+        }} />
       </FlexW1Grow>
       <Footer />
     </FlexH3Grow>
