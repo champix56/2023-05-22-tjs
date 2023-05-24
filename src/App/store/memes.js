@@ -18,7 +18,7 @@ const memes = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase('current/save', (state, action) => {
+        builder.addCase('current/save/fulfilled', (state, action) => {
             const pos = state.memes.findIndex(meme => meme.id === action.payload.id)
             if (pos >= 0) {
                 //existant dans la liste
