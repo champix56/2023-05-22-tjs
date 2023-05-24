@@ -1,0 +1,12 @@
+.PdfThumbnail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.pdfView{
+    text-align: center;
+    width:600px;
+    height: 400px;
+    border:1px solid black
+}

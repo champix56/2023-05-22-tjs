@@ -12,6 +12,7 @@ import Button from './components/ui/Button/Button';
 import { addImage } from './store/memes';
 import MemeThumbnail from './pages/MemeThumbnail/MemeThumbnail';
 import MemeEditor from './pages/MemeEditor/MemeEditor';
+import PdfThumbnail from './pages/PdfThumbnail/PdfThumbnail';
 function App(props) {
   const [meme, setmeme] = useState(emptyMeme);
   return (
@@ -24,8 +25,9 @@ function App(props) {
           <Route path='/thumbnail' element={
             <MemeThumbnail />
           } />
-          <Route path='/meme' element={
-            <MemeEditor />} />
+          <Route path='/meme' element={<MemeEditor />} />
+          <Route path='/pdf' element={
+            <PdfThumbnail />} />
         </Routes>
       </FlexW1Grow>
       <Footer />

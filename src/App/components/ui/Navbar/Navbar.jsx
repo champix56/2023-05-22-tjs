@@ -20,8 +20,8 @@ const Navbar = () => {
           <LinkContainer to="/meme">
             <Nav.Link href="#">Meme</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/meme/1">
-            <Nav.Link href="#">Meme/1</Nav.Link>
+          <LinkContainer to="/pdf">
+            <Nav.Link href="#">pdf</Nav.Link>
           </LinkContainer>
           </Nav>
         </Container>
