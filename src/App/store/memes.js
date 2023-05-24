@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { saveCurrent } from './current';
 
 const initialState = {
     images: [],
@@ -16,16 +17,28 @@ const memes = createSlice({
             state.images.push(...action.payload);
         }
     },
-    extraReducers:(builder)=>{
-        builder.addCase(fetchAllListesValues.fulfilled,(state,action)=>{
+    extraReducers: (builder) => {
+        builder.addCase('current/save', (state, action) => {
+            const pos = state.memes.findIndex(meme => meme.id === action.payload.id)
+            if (pos >= 0) {
+                //existant dans la liste
+
+                state.memes[pos] = action.payload;
+            }
+            else {
+                //pas existant dans la liste
+                state.memes.push(action.payload);
+            }
+        })
+        builder.addCase(fetchAllListesValues.fulfilled, (state, action) => {
             state.images.push(...action.payload.images);
             state.memes.push(...action.payload.memes);
-            console.log(state,action)
+            console.log(state, action)
         })
-        builder.addDefaultCase((state,action)=>{console.log(state,action)})
+        builder.addDefaultCase((state, action) => { console.log(state, action) })
     }
 });
-export const fetchAllListesValues=createAsyncThunk('listes/fetchAll', async () => {
+export const fetchAllListesValues = createAsyncThunk('listes/fetchAll', async () => {
 
     const prImg = await fetch(`http://localhost:5679/images`);
     const prMeme = await fetch(`http://localhost:5679/memes`);
