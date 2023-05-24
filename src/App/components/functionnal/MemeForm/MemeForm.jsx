@@ -14,7 +14,14 @@ const MemeForm = (props) => {
 
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
-      <form>
+      <form onSubmit={evt=>{
+        evt.preventDefault();
+        props.onSaveMeme(props.meme);
+      }}
+      onReset={evt=>{
+        props.onClearMeme();
+      }}
+      >
         <label htmlFor="titre"><h1>Titre</h1></label>
         <br />
         <input name="titre" id="titre" value={props.meme.titre}   onChange={evt => {
@@ -94,9 +101,11 @@ MemeForm.propTypes = {
     color: PropTypes.string.isRequired,
     frameSizeX: PropTypes.number.isRequired,
     frameSizeY: PropTypes.number.isRequired
-  }).isRequired,
+  }).isRequired,  
+  images : PropTypes.array.isRequired,
   onMemeChange: PropTypes.func.isRequired,
-  images : PropTypes.array.isRequired
+  onSaveMeme: PropTypes.func.isRequired,
+  onClearMeme: PropTypes.func.isRequired
 };
 
 MemeForm.defaultProps = {};
