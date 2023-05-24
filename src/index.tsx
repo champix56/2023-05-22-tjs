@@ -6,7 +6,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import {
   BrowserRouter as Router,
 } from 'react-router-dom'
-
+import {Provider} from 'react-redux'
+import { store } from './App/store/store';
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Router>
   </React.StrictMode>
 );
